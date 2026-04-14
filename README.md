@@ -80,3 +80,9 @@ java -cp src ContestResultsSplitter 2016.csv output/Institutions.csv output/Team
 - Institutions are treated as distinct by the combination of institution name, city, state/province, and country.
 - The program strips the malformed BOM characters present in the provided `2015.csv` header before validating columns.
 - The implementation is self-contained and uses only the Java standard library.
+
+---
+
+## Final Comments
+
+This project showed how a small, focused Java program can reliably transform raw contest data into cleaner relational outputs. It reinforced the value of validating input structure early, handling CSV edge cases carefully, and using simple identifiers to connect related records across generated files.
