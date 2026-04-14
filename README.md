@@ -13,7 +13,8 @@ The program is designed for the 2015 input file in this repository and for other
 
 ## Requirements
 
-- Java JDK 21.0.7
+- [Java JDK 21.0.7](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
+- [Apache Ant 1.10.15](https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.15-bin.zip)
 
 ---
 
@@ -23,6 +24,12 @@ From the repository root:
 
 ```powershell
 javac src/ContestResultsSplitter.java
+```
+
+You can also compile the project with Ant:
+
+```powershell
+ant compile
 ```
 
 ---
@@ -35,10 +42,22 @@ If you run the program with no arguments, it defaults to `2015.csv` and writes `
 java -cp src ContestResultsSplitter
 ```
 
+With Ant, the equivalent command is:
+
+```powershell
+ant run
+```
+
 You can also run the program with an explicit source CSV path:
 
 ```powershell
 java -cp src ContestResultsSplitter 2015.csv
+```
+
+With Ant, pass arguments through the `run.args` property:
+
+```powershell
+ant run -Drun.args="2015.csv"
 ```
 
 Both forms write:
@@ -50,6 +69,18 @@ You can also choose custom output paths:
 
 ```powershell
 java -cp src ContestResultsSplitter 2016.csv output/Institutions.csv output/Teams.csv
+```
+
+Ant supports the same arguments:
+
+```powershell
+ant run -Drun.args="2016.csv output/Institutions.csv output/Teams.csv"
+```
+
+To remove compiled Ant output, run:
+
+```powershell
+ant clean
 ```
 
 ---
